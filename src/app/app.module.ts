@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReservationModule } from './reservation/reservation.module';
 import { HomeModule } from './home/home.module';
+import { StudentModule } from './student/student.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     AppRoutingModule,
     ReservationModule,
-    HomeModule
+    HomeModule,
+    StudentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
