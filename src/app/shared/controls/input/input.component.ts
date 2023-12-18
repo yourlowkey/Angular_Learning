@@ -17,9 +17,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Output() changed = new EventEmitter<string>()
 
   value: string = '';
-  isDisabled!: boolean
+  isDisabled: boolean
   constructor() {
-
+    this.isDisabled = true
   }
 
   ngOnInit(): void {

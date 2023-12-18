@@ -11,23 +11,22 @@
     <!-- <app-spinner *ngIf="showSpinner"></app-spinner> -->
 
     <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
-        <app-input formControlName="input"></app-input>
-        <!-- <app-button type="submit">Submit</app-button>
-        <app-button (click)="onPatchValue()">Patch Value</app-button> -->
-        <!-- <app-button (click)="onToggleInline()">Toggle Inline</app-button>
-        <app-button (click)="onToggleDisable()">Toggle Disable</app-button> -->
+        
+        <app-button type="submit">Submit</app-button>
+        <app-button (click)="onToggleInline()">Toggle Inline</app-button>
+        <!-- <app-button (click)="onToggleDisable()">Toggle Disable</app-button> -->
         <br /><br /><br />
-<!-- 
-        <app-form-field label="Input" [required]="true" [control]="form.controls.input" [isInline]="isInline"
+
+        <app-form-field label="Input" [required]="true" [control]="form.controls?.['input']" [isInline]="isInline"
             [patternError]="regexErrors.numbers">
             <app-input formControlName="input"></app-input>
         </app-form-field>
 
-        <app-form-field label="Password" [required]="true" [control]="form.controls.password" [isInline]="isInline">
+        <app-form-field label="Password" [required]="true" [control]="form.controls?.['password']" [isInline]="isInline">
             <app-password formControlName="password"></app-password>
         </app-form-field>
 
-        <app-form-field label="Autocomplete" [required]="true" [control]="form.controls.autocomplete"
+        <!-- <app-form-field label="Autocomplete" [required]="true" [control]="form.controls.autocomplete"
             [isInline]="isInline">
             <app-autocomplete formControlName="autocomplete" [items]="items"></app-autocomplete>
         </app-form-field>
