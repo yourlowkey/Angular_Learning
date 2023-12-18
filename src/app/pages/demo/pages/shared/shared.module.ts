@@ -18,7 +18,7 @@ import { FormFieldModule } from 'src/app/shared/controls/form-field/form-field.m
     ButtonsModule,
     ControlsModule,
     ReactiveFormsModule,
-    FormFieldModule
+    FormFieldModule,
   ]
 })
 export class SharedModule { }

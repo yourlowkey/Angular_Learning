@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NotificationService } from 'src/app/services';
 import { regex, regexErrors } from 'src/app/shared/utils';
+import { ControlItem } from 'src/models/frontend';
 
 @Component({
   selector: 'app-shared',
@@ -13,8 +15,15 @@ export class SharedComponent implements OnInit {
   isInline!: boolean
   regexErrors = regexErrors;
 
-  // items!: ControlItem[];
-  constructor(private fb: FormBuilder) { }
+  items!: ControlItem[];
+  constructor(private fb: FormBuilder, private notification: NotificationService) {
+    this.isInline = true
+    this.items = [{ label: 'First', value: 1 },
+    { label: 'Second', value: 2 },
+    { label: 'Third', value: 3 },
+    { label: 'Fourth', value: 4 },
+    { label: 'Fifth', value: 5 }]
+  }
   ngOnInit(): void {
     this.form = this.fb.group({
       input: [null, {
@@ -88,11 +97,15 @@ export class SharedComponent implements OnInit {
   //   this.showSpinner = !this.showSpinner;
   // }
 
-  // onSuccess(): void {
-  //   this.notification.success('Everything is fine!');
-  // }
+  onSuccess(): void {
+    console.log("this success");
 
-  // onError(): void {
-  //   this.notification.error('Oops! Something is wrong');
-  // }
+    this.notification.success('Everything is fine!');
+
+  }
+
+  onError(): void {
+    this.notification.error('Oops! Something is wrong');
+    console.log("this error")
+  }
 }
