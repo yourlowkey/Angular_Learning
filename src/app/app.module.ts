@@ -11,6 +11,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Services
 import { NotificationModule } from './services';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { NotificationModule } from './services';
     AngularFirestoreModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
-    NotificationModule.forRoot()
+    NotificationModule.forRoot(),
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
