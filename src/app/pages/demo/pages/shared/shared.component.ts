@@ -99,7 +99,6 @@ export class SharedComponent implements OnInit {
 
   onSuccess(): void {
     console.log("this success");
-
     this.notification.success('Everything is fine!');
 
   }

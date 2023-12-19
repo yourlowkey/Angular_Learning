@@ -9,15 +9,15 @@ export class NotificationService {
 
   error(message: string): void {
     this.snackBar.openFromComponent(NotificationComponent, {
-      duration: 1000,
-      data: {},
+      duration: 3000,
+      data: { message },
       panelClass: ['mat-snackbar_error']
     })
   }
   success(message: string) {
     this.snackBar.openFromComponent(NotificationComponent, {
-      duration: 1000,
-      data: {},
+      duration: 3000,
+      data: { message },
       panelClass: ['mat-snackbar_success']
     })
   }
