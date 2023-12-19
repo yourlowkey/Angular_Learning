@@ -3,8 +3,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { MatSelectChange } from '@angular/material/select';
 
-import { ControlItem, Value } from '../../../models/frontend';
-export { ControlItem, Value } from '../../../models/frontend';
+import { ControlItem, Value } from 'src/app/models/frontend';
+export { ControlItem, Value } from 'src/app/models/frontend';
 
 @Component({
     selector: 'app-select',

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Store } from '@ngrx/store';
+import * as fromDictionaries from './store/dictionaries'
+import * as fromRoot from './store'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,15 +11,12 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private afs: AngularFirestore) {
+  constructor(private store: Store<fromRoot.State>) {
 
   }
   title = "course-app"
   ngOnInit(): void {
-    this.afs.collection('test').snapshotChanges().subscribe(data => {
-      console.log(data.map(x => { x.payload.doc.data() }));
-    })
-    this.afs.collection("test").get()
+    this.store.dispatch(new fromDictionaries.Read())
   }
 
 }

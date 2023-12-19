@@ -11,8 +11,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Services
 import { NotificationModule } from './services';
+
+//Store
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+const StoreDevtools = StoreDevtoolsModule.instrument({ maxAge: 50 })
+import { reducers, effects } from './store'
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +32,16 @@ import { EffectsModule } from '@ngrx/effects';
     AngularFirestoreModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
+    MatNativeDateModule,
     NotificationModule.forRoot(),
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([])
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictActionImmutability: true,
+        strictStateImmutability: true
+      }
+    }),
+    EffectsModule.forRoot(effects),
+    StoreDevtools
   ],
   providers: [],
   bootstrap: [AppComponent]
