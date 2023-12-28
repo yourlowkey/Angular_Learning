@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from '../models/reservation';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +10,19 @@ export class ReservationService {
 
   private reservations: Reservation[] = [];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     let savedReservations = localStorage.getItem("reservations");
     this.reservations = savedReservations ? JSON.parse(savedReservations) : [];
+    
   }
 
   // CRUD
 
-  getReservations(): Reservation[] {
-    return this.reservations;
+  // getReservations(): Reservation[] {
+  //   return this.reservations;
+  // }
+  getReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>("someapi");
   }
 
   getReservation(id: string): Reservation | undefined {
