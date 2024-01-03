@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomepageComponent } from './homepage.component';
-
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
-    HomepageComponent
+    HomepageComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
-    HomepageRoutingModule 
+    HomepageRoutingModule
   ]
 })
 export class HomepageModule { }
