@@ -11,7 +11,7 @@ import { HomepageComponent } from './homepage.component';
   ],
   imports: [
     CommonModule,
-    HomepageRoutingModule
+    HomepageRoutingModule 
   ]
 })
 export class HomepageModule { }
