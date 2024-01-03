@@ -8,18 +8,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { HeaderComponent } from './components/header/header.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    StoreModule.forRoot([]),
-    HttpClientModule,
-    TranslocoRootModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        // HeaderComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        StoreModule.forRoot([]),
+        HttpClientModule,
+        TranslocoRootModule,
+        HeaderComponent
+    ]
 })
 export class AppModule { }
