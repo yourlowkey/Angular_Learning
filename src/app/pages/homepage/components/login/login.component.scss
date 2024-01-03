@@ -1,0 +1,30 @@
+@import '../../../../../styles/colors';
+.login {
+  height: 100px;
+  color: $base;
+  border-radius: 5px;
+  background-color: $primary-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  padding-bottom: 5px;
+  &__title {
+    font-size: 1em;
+  }
+  &__user {
+    padding-bottom: 20px;
+    &_button {
+      height: 200%;
+      width: 90%;
+      background-color: $primary-dark;
+      border: none;
+      border-radius: 5px;
+      color: gray;
+    }
+  }
+
+  &__description {
+    font-size: 0.8em;
+  }
+}
