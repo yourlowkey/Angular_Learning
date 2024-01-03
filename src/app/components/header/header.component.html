@@ -1,9 +1,36 @@
 <div class="header">
     <div class="header__title">
-        LPA
+        <b>언어심리평가</b>
     </div>
     <div class="header__navigation">
-        <a class="app_a" routerLink="homepage" routerLinkActive="app-a_active">Demo</a>
+        <a class="app_a" routerLink="homepage" routerLinkActive="app-a_active">Home</a>
+        <a class="app_a" routerLink="homepage" routerLinkActive="app-a_active">NavlinkA</a>
+        <a class="app_a" routerLink="homepage" routerLinkActive="app-a_active">NavlinkB</a>
+        <a class="app_a" routerLink="homepage" routerLinkActive="app-a_active">NavlinkC</a>
+        <a class="app_a" routerLink="homepage" routerLinkActive="app-a_active">NavlinkD</a>
+       
+    </div>
+    <div class="header__action">
+        <button mat-icon-button aria-label="Example icon-button with a search">
+            <mat-icon>search</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
     </div>
 </div>
 

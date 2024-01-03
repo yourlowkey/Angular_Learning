@@ -5,18 +5,25 @@
     justify-content: space-between;
 
     &__title {
-        font-size: 1.2em;
-        display: inline-flex;
+        font-size: 2em;
+        display: flex;
         align-items: center;
+        margin-left: 15%;
     }
 
     &__navigation {
-        display: inline-flex;
+        display: flex;
+        align-items: center;
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    &__action {
+        display: flex;
         align-items: center;
     }
 }
 
 .app-a {
-    margin-left: 1em;
-    margin-right: 0;
+    margin-left: 3em;
+    margin-right: 3em;
 }
