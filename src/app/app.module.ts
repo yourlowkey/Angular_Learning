@@ -7,20 +7,22 @@ import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { HeaderComponent } from './components/header/header.component';
+import { ProtectLayoutComponent } from 'src/styles/layout/protected-layout/protect-layout/protect-layout.component';
 @NgModule({
-    declarations: [
-        AppComponent,
-        // HeaderComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        StoreModule.forRoot([]),
-        HttpClientModule,
-        TranslocoRootModule,
-        HeaderComponent
-    ]
+  declarations: [
+    AppComponent,
+    ProtectLayoutComponent
+    // HeaderComponent
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    StoreModule.forRoot([]),
+    HttpClientModule,
+    TranslocoRootModule,
+    HeaderComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {}

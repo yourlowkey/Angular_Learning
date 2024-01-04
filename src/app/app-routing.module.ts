@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { ProtectLayoutComponent } from 'src/styles/layout/protected-layout/protect-layout/protect-layout.component';
 const routes: Routes = [
   {
-    path: '', children: [
+    path: '',
+    component: ProtectLayoutComponent,
+    children: [
       {
-        path: '',
-        loadChildren: () => import('./pages/homepage/homepage.module').then(m => m.HomepageModule)
+        path: 'home-page',
+        loadChildren: () =>
+          import('./pages/homepage/homepage.module').then(
+            (m) => m.HomepageModule
+          )
       }
     ]
   }
@@ -16,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
