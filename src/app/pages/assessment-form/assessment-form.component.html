@@ -1,0 +1,87 @@
+<div class="form__container">
+    <div class="form">
+        <div >
+            <img class="form__hospital-logo" src="../../../assets/img/mcarthur.png">
+        </div>
+        <hr class="hr__bold">
+        <div class="form__patient-information">
+            <div class="form__patient-information__title">
+                <h1> 언어 평가 보고서</h1>
+                <p>Language Assessment Report</p>
+            </div>
+            <div class="form__patient-information__list">
+                <p>asdasdasdasdasd</p>
+                <p>asdasdasdasd</p>
+                <p>asdasdasdasdasdasd</p>
+            </div>
+        </div>
+        <hr class="hr__bold">
+        <hr class="hr__bold">
+        <div class="form__test-administrated">
+            <div class="form__test-administrated__title">
+                TEST ADMINISTRATED
+            </div>
+            <div class="form__test-administrated__list">
+                <div *ngFor="let item of items">
+                    <label class="checkbox">                        
+                        <input 
+                            type="checkbox" 
+                            class="checkbox__input" 
+                            [value]="item.value" 
+                        >
+                        {{item.label}}
+                        <span class="checkbox__checkmark"></span>
+                    </label></div>
+            </div>
+        </div>
+        <hr class="hr__bold">
+        <div class="form__evaluation">
+            <hr class="hr__bold">
+            <div class="form__background-information">
+                <p class="form__background-information__title">
+                    Evaluation1
+                </p>
+                <div class="form__background-information__evaluation">
+                    
+                </div>
+                <hr class="hr__lightbold">
+                <p class="form__background-information__title">
+                    Evaluation2
+                </p>
+                <div class="form__background-information__evaluation"></div>
+                <p class="form__background-information__title">
+                    Evaluation3
+                </p>
+            </div>
+            <hr class="hr__bold">           
+            <div class="form__table-score">
+                <div class="form__table-score__title">MacArthur - Bates Communication Development Assessment Record (K-MBCDI)</div>                
+                    <table class="form__table">
+                        <tr class="form__table__row-title">
+                            <td class="form__table_thead">title</td>
+                            <td class="form__table_thead">title</td>
+                            <td class="form__table_thead">title</td>
+                        </tr>
+                        <tr>
+                            <td class="form__table_thead">title</td>
+                            <td class="form__table_tbody">2</td>
+                            <td class="form__table_tbody">3</td>                           
+                        </tr>
+                        <tr class="form__table__row-title">
+                            <td class="form__table_thead">title</td>
+                            <td class="form__table_thead">title</td>
+                            <td class="form__table_thead">title</td>
+                        </tr>
+                        <tr>
+                            <td class="form__table_thead">title</td>
+                            <td class="form__table_tbody">2</td>
+                            <td class="form__table_tbody">3</td>                           
+                        </tr>
+                        
+                    </table>               
+            </div>
+        </div>
+        <hr>
+        
+    </div>
+</div>
