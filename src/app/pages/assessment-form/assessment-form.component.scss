@@ -1,0 +1,77 @@
+@mixin center {
+    text-align: center;
+}
+
+.form {
+    &__container {
+        width: 70em;
+        padding: 4em;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+    }
+    &__hospital-logo {
+        width: 25%;
+    }
+    &__patient-information {
+        display: flex;
+        justify-content: space-around;
+        font-weight: bold;
+        &__title {
+            @include center();
+        }
+        &__list {
+        }
+    }
+    &__test-administrated {
+        &__title {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+    &__evaluation {
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        padding: 2em;
+    }
+    &__background-information {
+        &__title {
+            font-weight: bold;
+        }
+        &__evaluation {
+            height: 5em;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+    }
+    &__table-score {
+        padding-left: 2em;
+        padding-right: 2em;
+        &__title {
+            font-weight: bold;
+        }
+    }
+    &__table {
+        @include center();
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 60em;
+        &__row-title {
+            background-color: blanchedalmond;
+            border: 1px solid black;
+        }
+    }
+}
+.hr {
+    &__bold {
+        height: 2px;
+        color: black;
+        background-color: black;
+    }
+    &__lightbold {
+        height: 1px;
+        background-color: black;
+        color: black;
+    }
+}
