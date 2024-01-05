@@ -7,6 +7,9 @@ import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { HeaderComponent } from './components/header/header.component';
+import { AssessmentModule } from './services';
+//Services
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -20,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
         StoreModule.forRoot([]),
         HttpClientModule,
         TranslocoRootModule,
-        HeaderComponent
+        HeaderComponent,
+        AssessmentModule.forRoot()
     ]
 })
 export class AppModule { }
