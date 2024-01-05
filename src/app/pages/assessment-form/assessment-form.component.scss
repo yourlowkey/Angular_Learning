@@ -1,7 +1,7 @@
 @mixin center {
     text-align: center;
 }
-
+@import '../../../styles/colors.scss';
 .form {
     &__container {
         width: 70em;
@@ -19,14 +19,20 @@
         font-weight: bold;
         &__title {
             @include center();
+            font-size: 1.8em;
+            letter-spacing: 0.2rem;
         }
         &__list {
+            font-size: 1.35em;
         }
     }
     &__test-administrated {
         &__title {
             text-decoration: underline;
             font-weight: bold;
+            padding-bottom: 0.5em;
+            padding-left: 0.5em;
+            font-size: 1.2em;
         }
     }
     &__evaluation {
@@ -38,11 +44,18 @@
     &__background-information {
         &__title {
             font-weight: bold;
+            font-size: 1.5em;
         }
         &__evaluation {
-            height: 5em;
+            height: 8em;
             border-top: 1px solid black;
             border-bottom: 1px solid black;
+            margin-bottom: 2em;
+        }
+        &_text {
+            border: none;
+            width: 98%;
+            height: 95%;
         }
     }
     &__table-score {
@@ -50,18 +63,74 @@
         padding-right: 2em;
         &__title {
             font-weight: bold;
+            margin-top: 1em;
         }
     }
     &__table {
         @include center();
         border: 1px solid black;
         border-collapse: collapse;
-        width: 60em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        // width: 60em;
         &__row-title {
             background-color: blanchedalmond;
             border: 1px solid black;
+            &_PRES {
+                background-color: $primary-light;
+            }
+        }
+        &_thead {
+            padding-left: 3em;
+            padding-right: 3em;
+        }
+        &_thead1 {
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+        &_thead2 {
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+        &_thead3 {
+            padding-left: 6em;
+            padding-right: 6em;
+        }
+        &_thead-selsi {
+            padding-left: 0.8em;
+            padding-right: 0.8em;
+        }
+        &_input {
+            border: none;
+            height: 100%;
+            width: 98%;
         }
     }
+    &__assessment {
+        &__title {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        &__evaluation {
+            height: 12em;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            margin-bottom: 2em;
+        }
+        &_text {
+            border: none;
+            width: 98%;
+            height: 95%;
+        }
+    }
+}
+td {
+    border: 1px solid black;
+    font-size: 1.35em;
+    height: 1.5em;
+}
+ul {
+    list-style-type: none;
 }
 .hr {
     &__bold {
