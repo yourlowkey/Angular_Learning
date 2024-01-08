@@ -1,14 +1,22 @@
 @mixin center {
-    text-align: center;
+    text-align: center !important;
+}
+@mixin textbold {
+    font-weight: bold;
 }
 @import '../../../styles/colors.scss';
 .form {
     &__container {
         width: 70em;
+        margin-left: auto;
+        margin-right: auto;
         padding: 4em;
         border-style: solid;
-        border-width: 1px;
+        border-width: 0.5em;
         border-color: black;
+        word-spacing: 0.3em;
+        @include textbold();
+        font-family: 'Noto Sans', sans-serif;
     }
     &__hospital-logo {
         width: 25%;
@@ -16,23 +24,48 @@
     &__patient-information {
         display: flex;
         justify-content: space-around;
-        font-weight: bold;
+        font-weight: 900;
+        font-size: 1.2em;
         &__title {
             @include center();
             font-size: 1.8em;
-            letter-spacing: 0.2rem;
+            font-weight: 2200;
+            letter-spacing: 0.3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
         }
         &__list {
-            font-size: 1.35em;
+            width: 30%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2em;
+            &_col {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+        & p {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        & input {
+            font-size: 1.1em;
+            width: 89%;
+            height: 100%;
+            border: none;
+            @include textbold();
         }
     }
     &__test-administrated {
         &__title {
             text-decoration: underline;
-            font-weight: bold;
             padding-bottom: 0.5em;
             padding-left: 0.5em;
-            font-size: 1.2em;
+            font-size: 1.4em;
+            font-weight: bolder;
         }
     }
     &__evaluation {
@@ -43,13 +76,12 @@
     }
     &__background-information {
         &__title {
-            font-weight: bold;
             font-size: 1.5em;
         }
         &__evaluation {
             height: 8em;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
+            // border-top: 1px solid black;
+            // border-bottom: 1px solid black;
             margin-bottom: 2em;
         }
         &_text {
@@ -62,7 +94,7 @@
         padding-left: 2em;
         padding-right: 2em;
         &__title {
-            font-weight: bold;
+            @include textbold();
             margin-top: 1em;
         }
     }
@@ -72,7 +104,6 @@
         border-collapse: collapse;
         margin-top: 1em;
         margin-bottom: 1em;
-        // width: 60em;
         &__row-title {
             background-color: blanchedalmond;
             border: 1px solid black;
@@ -84,17 +115,13 @@
             padding-left: 3em;
             padding-right: 3em;
         }
-        &_thead1 {
-            padding-left: 4em;
-            padding-right: 4em;
+        &_thead-medium {
+            padding-left: 4.5em;
+            padding-right: 4.5em;
         }
-        &_thead2 {
-            padding-left: 4em;
-            padding-right: 4em;
-        }
-        &_thead3 {
-            padding-left: 6em;
-            padding-right: 6em;
+        &_thead-large {
+            padding-left: 7em;
+            padding-right: 7em;
         }
         &_thead-selsi {
             padding-left: 0.8em;
@@ -108,13 +135,12 @@
     }
     &__assessment {
         &__title {
-            font-weight: bold;
             font-size: 1.5em;
         }
         &__evaluation {
             height: 12em;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
+            // border-top: 1px solid black;
+            // border-bottom: 1px solid black;
             margin-bottom: 2em;
         }
         &_text {
@@ -126,13 +152,15 @@
 }
 td {
     border: 1px solid black;
-    font-size: 1.35em;
+    font-size: 1em;
     height: 1.5em;
 }
 ul {
     list-style-type: none;
 }
 .hr {
+    color: black;
+    background-color: black;
     &__bold {
         height: 2px;
         color: black;
@@ -140,7 +168,7 @@ ul {
     }
     &__lightbold {
         height: 1px;
-        background-color: black;
         color: black;
+        background-color: black;
     }
 }

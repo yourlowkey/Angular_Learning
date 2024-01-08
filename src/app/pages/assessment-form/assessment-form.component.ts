@@ -15,16 +15,18 @@ export class AssessmentFormComponent {
   constructor(private assessmentService: AssessmentService) {
     this.items = [
       {
-        label: 'MacArthur - Bates Communication Development Assessment Record (K-MBCDI)',
+        label: '맥아더-베이츠 의사소통발달 평가 기록지(K-MBCDI)',
         value: 1
       },
       {
-        label: 'zero . Sequenced Language Scale for Infants ( SELSI)',
+        label: '영.유아 언어발달검사 (SELSI)',
         value: 2
       },
-      { label: 'Third', value: 3 },
-      { label: 'Fourth', value: 4 },
-      { label: 'Fifth', value: 5 }]
+      {
+        label: '취학 전 아동의 수용언어 및 표현언어 발달 척도 (PRES)',
+        value: 3
+      },
+    ]
   }
 
   onChanged(value: Value, event: Event): void {
@@ -35,7 +37,6 @@ export class AssessmentFormComponent {
     const selected = this.getSelected(value, checked)
     this.value = selected
     console.log("emit value checkbox", this.changed);
-
     this.changed.emit(selected)
   }
   private getSelected(value: Value, checked: boolean): Value[] {
