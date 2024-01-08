@@ -2,17 +2,26 @@
     <div class="form">
         <div >
             <img class="form__hospital-logo" src="../../../assets/img/mcarthur.png">
-        </div>
+        </div>       
         <hr class="hr__bold">
         <div class="form__patient-information">
             <div class="form__patient-information__title">
-                <h1> 언어 평가 보고서</h1>
-                <p>Language Assessment Report</p>
+                <div> 언 어 평 가 보 고 서</div>
+                <div>Language Assessment Report</div>
             </div>
             <div class="form__patient-information__list">
-                <p>asdasdasdasdasd</p>
-                <p>asdasdasdasd</p>
-                <p>asdasdasdasdasdasd</p>
+                <div class="form__patient-information__list_col">
+                    <p><span>성</span><span>명</span></p>
+                    <p><span>연</span> <span>령</span></p>
+                    <p><span>검</span> <span>사</span> <span>일</span></p>
+                    <p><span>생</span> <span>년</span> <span>월</span> <span>일</span> </p>
+                </div>
+                <div class="form__patient-information__list_col">
+                    <div> : <input></div>
+                    <div> : <input></div>
+                    <div> : <input></div>
+                    <div> : <input></div>
+                </div>
             </div>
         </div>
         <hr class="hr__bold">
@@ -37,26 +46,29 @@
         </div>
         <hr class="hr__bold">
         <div class="form__evaluation">
-            <hr class="hr__lightbold">
+            <hr class="hr__bold">
             <div class="form__background-information">
                 <p class="form__background-information__title">
-                    Evaluation1
+                    배경정보
                 </p>
+                <hr class="hr__bold">
                 <div class="form__background-information__evaluation">
                     <textarea class="form__background-information_text" ></textarea>
                 </div>
-                <hr class="hr__lightbold">
+                <hr class="hr__bold">
                 <p class="form__background-information__title">
-                    Evaluation2
-                </p>                
+                    평가태도
+                </p>  
+                <hr class="hr__bold">              
                 <div class="form__background-information__evaluation">
                     <textarea class="form__background-information_text" ></textarea>
                 </div>
+                <hr class="hr__bold">
                 <p class="form__background-information__title">
-                    Evaluation3
+                    평가결과
                 </p>
-            </div>
-            <hr class="hr__lightbold">           
+                <hr class="hr__bold">
+            </div>           
             <div class="form__table-score">              
                 <div *ngIf="value">
                     <ul>
@@ -66,24 +78,26 @@
                                 </div>                
                                 <table class="form__table">
                                     <tr class="form__table__row-title">
-                                        <td class="form__table_thead1">title</td>
-                                        <td class="form__table_thead2">title</td>
-                                        <td class="form__table_thead3">title</td>
+                                        <td class="form__table_thead-medium">낱말</td>
+                                        <td class="form__table_thead-medium">원점수</td>
+                                        <td class="form__table_thead-large">백분위 위치
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="form__table_thead">title</td>
+                                        <td class="form__table_thead">표현</td>
                                         <td class="form__table_tbody">
                                             <input type="number" class="form__table_input" (blur)="onBlurKbcdmiExpresstionScore($any($event.target).value)">
                                         </td>
                                         <td class="form__table_tbody"><input readonly class="form__table_input" [value]="kcbdmiExpressionPercent? kcbdmiExpressionPercent:null" ></td>                           
                                     </tr>
                                     <tr class="form__table__row-title">
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
+                                        <td class="form__table_thead">문법</td>
+                                        <td class="form__table_thead">원점수</td>
+                                        <td class="form__table_thead">백분위 위치
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="form__table_thead">title</td>
+                                        <td class="form__table_thead">총점</td>
                                         <td class="form__table_tbody"><input class="form__table_input" (blur)="onBlurKbcdmiGrammarScore($any($event.target).value)"></td>
                                         <td class="form__table_tbody"><input readonly class="form__table_input" [value]="kcbdmiGrammarPercent? kcbdmiGrammarPercent:null" ></td>                           
                                     </tr>
@@ -96,28 +110,34 @@
                                 <div class="form__table-score__title">{{i+1}}.영.유아 언어발달 검사 (Sequensed Language Scale for Infants(SELSI))</div>                
                                 <table class="form__table">
                                     <tr class="form__table__row-title">
-                                        <td colspan="2" class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
+                                        <td colspan="2" class="form__table_thead">평가도구/영역
+                                        </td>
+                                        <td class="form__table_thead">원점수
+                                        </td>
+                                        <td class="form__table_thead">등가연력
+                                        </td>
+                                        <td class="form__table_thead">백분위위수
+                                        </td>
+                                        <td class="form__table_thead">비고
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td rowspan="3">SELSI</td>
-                                        <td class="form__table_thead-selsi">tilt</td>
+                                        <td class="form__table_thead-selsi">수용</td>
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>   
                                         <td class="form__table_tbody"><input class="form__table_input" ></td> 
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>  
                                         <td rowspan="3"><input class="form__table_input" ></td>                       
                                     </tr>
                                     <tr >
-                                        <td class="form__table_thead-selsi">tilt</td>
+                                        <td class="form__table_thead-selsi">표현
+                                        </td>
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>   
                                         <td class="form__table_tbody"><input class="form__table_input" ></td> 
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>       
                                     </tr>
                                     <tr>
-                                        <td class="form__table_thead-selsi">tilt</td>
+                                        <td class="form__table_thead-selsi">전반</td>
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>   
                                         <td class="form__table_tbody"><input class="form__table_input" ></td> 
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>                          
@@ -132,28 +152,29 @@
                                 </div>                
                                 <table class="form__table">
                                     <tr class="form__table__row-title_PRES">
-                                        <td colspan="2" class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
-                                        <td class="form__table_thead">title</td>
+                                        <td colspan="2" class="form__table_thead">평가도구/영역
+                                        </td>
+                                        <td class="form__table_thead">원점수</td>
+                                        <td class="form__table_thead">등가연력</td>
+                                        <td class="form__table_thead">백분위위수</td>
+                                        <td class="form__table_thead">비고</td>
                                     </tr>
                                     <tr>
                                         <td rowspan="3">PRES</td>
-                                        <td class="form__table_thead-selsi">tilt</td>
+                                        <td class="form__table_thead-selsi">수용</td>
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>   
                                         <td class="form__table_tbody"><input class="form__table_input" ></td> 
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>  
                                         <td rowspan="3"><input class="form__table_input" ></td>                       
                                     </tr>
                                     <tr >
-                                        <td class="form__table_thead-selsi">tilt</td>
+                                        <td class="form__table_thead-selsi">표현</td>
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>   
                                         <td class="form__table_tbody"><input class="form__table_input" ></td> 
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>       
                                     </tr>
                                     <tr>
-                                        <td class="form__table_thead-selsi">tilt</td>
+                                        <td class="form__table_thead-selsi">전반</td>
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>   
                                         <td class="form__table_tbody"><input class="form__table_input" ></td> 
                                         <td class="form__table_tbody"><input class="form__table_input" ></td>                          
@@ -163,24 +184,19 @@
                                     <textarea class="form__assessment_text" ></textarea>
                                 </div>  
                             </div>
-                            <div *ngIf="item==4">
-                                {{item}}
-                            </div>
                         </li>
                     </ul>
-                </div>
-                
-                <hr class="hr__lightbold">
-            <div class="form__assessment">
-                <p class="form__assessment__title">
-                    summary of results and recommendations
-                </p>
-                <div class="form__assessment__evaluation">
-                    <textarea class="form__assessment_text" ></textarea>
-                </div>                                                  
-             </div>
+                </div>           
+            </div>        
         </div>
-        
-        
-    </div>
+    <div class="form__assessment">
+        <hr class="hr__bold">
+        <p class="form__assessment__title">
+            결과요약 및 제언
+        </p>
+        <hr class="hr__bold">
+        <div class="form__assessment__evaluation">
+            <textarea class="form__assessment_text" ></textarea>
+        </div>                                                  
+    </div>            
 </div>
